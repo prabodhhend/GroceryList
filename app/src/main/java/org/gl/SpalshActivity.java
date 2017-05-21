@@ -22,7 +22,7 @@ public class SpalshActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SpalshActivity.this, MainActivity.class));
+                startActivity(new Intent(SpalshActivity.this, LoginActivity.class));
                 finish();
             }
         }, 3000);

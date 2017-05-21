@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="1"
+        android:src="@drawable/gl_logo" />
+
+
+    <EditText
+        android:id="@+id/editUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_logo"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/margin"
+        android:hint="@string/username"
+        android:inputType="textEmailAddress"
+        android:padding="@dimen/padding" />
+
+    <EditText
+        android:id="@+id/editPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editUsername"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/margin"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:padding="@dimen/padding" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:text="@string/login" />
+
+    <RelativeLayout
+        android:id="@+id/layout_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonLogin"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/img_fblogin"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/facebook_logo" />
+
+        <ImageView
+            android:id="@+id/img_gmail_login"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_toRightOf="@+id/img_fblogin"
+            android:src="@drawable/google_logo" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textTermsAndConditions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/margin"
+        android:text="@string/termsAndConditions" />
+
+    <android.support.v4.widget.ContentLoadingProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+</RelativeLayout>
