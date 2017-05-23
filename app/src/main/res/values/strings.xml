@@ -6,4 +6,7 @@
     <string name="login">Login</string>
     <string name="termsAndConditions">Terms And Conditions</string>
 
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
 </resources>
