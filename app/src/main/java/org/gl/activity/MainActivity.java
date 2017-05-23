@@ -1,8 +1,10 @@
-package org.gl;
+package org.gl.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +13,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.gl.R;
+import org.gl.fragment.MainFragment;
 
 /**
  * Created by ADMIN on 5/18/2017.
@@ -34,40 +39,40 @@ public class MainActivity extends AppCompatActivity {
     public void initNavigationDrawer() {
 
         NavigationView navigationView = (NavigationView)findViewById(R.id.navigation_view);
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
-
+                Fragment newFragment;
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 int id = menuItem.getItemId();
-
                 switch (id){
                     case R.id.home:
-                        Toast.makeText(getApplicationContext(),"Home", Toast.LENGTH_SHORT).show();
-                        drawerLayout.closeDrawers();
+                        newFragment = new MainFragment();
+                        transaction.replace(R.id.fragment_main, newFragment);
+                        transaction.addToBackStack(null);
+                        transaction.commit();
                         break;
                     case R.id.settings:
                         Toast.makeText(getApplicationContext(),"Settings",Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.about_us:
                         Toast.makeText(getApplicationContext(),"about_us",Toast.LENGTH_SHORT).show();
-                        drawerLayout.closeDrawers();
                         break;
                     case R.id.profile:
                         Toast.makeText(getApplicationContext(),"profile",Toast.LENGTH_SHORT).show();
-                        drawerLayout.closeDrawers();
                         break;
                     case R.id.privacy_policy:
                         Toast.makeText(getApplicationContext(),"privacy_policy",Toast.LENGTH_SHORT).show();
-                        drawerLayout.closeDrawers();
                         break;
                     case R.id.logout:
                         finish();
                     case R.id.my_list:
                         Toast.makeText(getApplicationContext(),"my_list",Toast.LENGTH_SHORT).show();
-                        drawerLayout.closeDrawers();
                         break;
 
                 }
+                drawerLayout.closeDrawers();
                 return true;
             }
         });

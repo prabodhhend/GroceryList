@@ -1,4 +1,4 @@
-package org.gl;
+package org.gl.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+
+import org.gl.R;
 
 /**
  * Created by ADMIN on 5/21/2017.
